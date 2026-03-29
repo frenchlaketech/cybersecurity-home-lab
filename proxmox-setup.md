@@ -1,9 +1,10 @@
 # Proxmox Lab Setup
 
 ## 🖥️ Environment
-- Host: Proxmox VE
-- RAM: 32GB
-- Storage: 500GB+
+- Host: Proxmox VE (HP EliteDesk 800 G3 SFF)
+- RAM: 24GB 
+- Storage: 1tb M.2 for hosts
+          16tb 7200 RPM HDD
 
 ---
 
