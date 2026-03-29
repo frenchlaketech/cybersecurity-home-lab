@@ -138,9 +138,4 @@ Reboot networking or node.
 * Install Wazuh agent on Windows VMs
 * Start building attack scenarios
 
-```
 
-This version is clean, uses proper Markdown tables, code blocks, headings, and will render nicely on GitHub.  
-
-If you want, I can also make a **“one-page visual version”** with a network diagram and color-coded sections, ready to commit to GitHub. It would make the guide instantly more readable. Do you want me to do that?
-```
