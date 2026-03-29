@@ -1,6 +1,3 @@
-Here’s a cleaned, GitHub-ready version of your `install-guide.md`. I’ve formatted it with proper Markdown for headings, code blocks, tables, and clarity so it’s easy to copy-paste:
-
-
 # 🖥️ Proxmox Homelab Setup – Install Guide
 
 ## 1. Hardware Requirements
