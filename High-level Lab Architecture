@@ -1,0 +1,16 @@
+                    [ Internet  (home network) ]
+                               |
+                        (vmbr0 - WAN)
+                               |
+                          [ pfSense ]
+                               |
+        -------------------------------------------------
+        |                     |                        |
+   (vmbr1)               (vmbr2)                 (vmbr3)
+  MGMT NET              USER NET                ATTACK NET
+  10.10.10.0/24        10.20.20.0/24           10.30.30.0/24
+        |                     |                        |
+   Proxmox GUI        Windows 10/11 VM           Kali Linux
+   Admin Box          AD Users                  Attacker box
+        |                     |
+   Wazuh / SIEM        Windows Server (AD)
