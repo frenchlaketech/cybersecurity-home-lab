@@ -1,0 +1,53 @@
+Good call—locking the kernel on Proxmox VE is one of those “save yourself later pain” moves, especially for a homelab where a random kernel update can break networking, drivers, or VMs.
+
+🧠 What “locking the kernel” actually does
+
+It prevents apt upgrade from installing a newer kernel automatically, so your system stays stable.
+
+✅ Step 1 — See your current kernel
+uname -r
+
+You’ll get something like:
+
+6.8.4-3-pve
+🔒 Step 2 — Lock the kernel packages
+
+Run:
+
+apt-mark hold proxmox-kernel-*
+apt-mark hold pve-kernel-*
+
+This tells APT:
+
+“Do NOT upgrade these packages unless I explicitly allow it.”
+
+🔍 Step 3 — Verify it worked
+apt-mark showhold
+
+You should see:
+
+proxmox-kernel-...
+pve-kernel-...
+⚠️ Important nuance (this is where people mess up)
+
+This locks future updates, but:
+
+It does NOT remove already-installed newer kernels
+It does NOT stop Proxmox from listing newer kernels
+🧹 Optional (but recommended): Remove extra kernels
+
+List installed kernels:
+
+dpkg --list | grep pve-kernel
+
+Remove older ones (keep your current + one backup):
+
+apt remove pve-kernel-<old-version>
+🚨 If you ever WANT to upgrade later
+
+Unlock:
+
+apt-mark unhold proxmox-kernel-*
+apt-mark unhold pve-kernel-*
+
+Then upgrade normally.
